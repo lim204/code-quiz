@@ -117,7 +117,7 @@ if ( event.target.matches('.choice')){
      // increase the current score
 
    }else{
-    timeLeft -= 10;
+    timeLeft -=10;
     //decrease timer 10 seconds
     
    }
@@ -135,11 +135,11 @@ if ( event.target.matches('.choice')){
     }
 }
 
-
 });
 //create highScores array
-
-
+var highScores=[];
+var timeLeft=60;
+var uiInputVal=" ";
 
 function saveScore(event){
     event.preventDefault()
@@ -147,14 +147,23 @@ function saveScore(event){
     console.log(initials)
 
     //put initals and score into an object
+    var myScoreJson={
+      "initial":uiInputVal,
+      "score":timeLeft
+    }
     
     //.push object into highscores array
-    
+    highScores.push(myScoreJson);
 
     //localStorage.setItem("My high scores", highScores)
-    
     localStorage.setItem(initials, score)
 
     //display all highsscores in local storage
+    localStorage.setItem("my-highh-scores",JSON.stringify(highScores));
+    
+    var storeValue=
+    JSON.parse(localStorage.getItem("my-high-scores"))
+    console.log(storeValue[0].score);
+
 }
 buttonEl.addEventListener('click',saveScore);

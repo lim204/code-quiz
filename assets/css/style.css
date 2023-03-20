@@ -23,13 +23,28 @@
     flex-wrap:wrap;
     align-content: center;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
 }
 button{
     outline: none;
     background-color:blueviolet;
     color: white;
-    border: 0px;
-    
-
 }
+
+#heading{
+    display:flex;
+    flex-wrap:wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;  
+}
+
+#content button.choice{
+    display:block;
+    margin: auto;
+    margin-bottom:1%;
+}
+
+
+
+
