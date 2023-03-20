@@ -1,3 +1,35 @@
 * {
     box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif   
+}
+.top-bar timer{
+    float:right;
+
+ }
+.top-bar button{
+    outline:none;
+    background-color:white;
+    color: blueviolet;
+}
+.start-content{
+    justify-content: center;
+}
+.timer{
+    float:right;
+}
+#start-content{
+    display: flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    outline: none;
+    background-color:blueviolet;
+    color: white;
+    border: 0px;
+    
+
 }

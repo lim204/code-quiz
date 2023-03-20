@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,23 +9,29 @@
 </head>
 
 <body>
-    <header>
-        Timer: <span id="timeLeft">0</span>
+    <header class="top-bar">  
+        <button>View high scores</button>
+       <div class="timer">Timer: <span id="timeLeft">0</span>
+       </div> 
     </header>
 
 
-    <h2 id="heading">Welcome to Code Quiz</h2>
-    <div id="content">
+    
+    <div id="start-content">
+        <h2>Coding Quiz Challenge</h2>
         <p>
-            Please clicks start below to begin quiz.
+            Try to answer the following code-related question within the time limit.<br> Keep in mind that incorrect answers will penalized your score/time by ten seconds!
         </p>
    
 
      <button id="start">Start Quiz</button>
     </div>
-
-
-
+    
+    
+    <div id="question">
+        <h2 id="heading"> </h2> 
+        <div id="content"> </div>
+    </div>
 
 
 

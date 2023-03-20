@@ -9,6 +9,7 @@ var startBtnEl = document.querySelector('#start');
 var timer;
 var score=0;
 
+
 // list of all questions, choices, and answers
 var questions = [
     {
@@ -55,12 +56,11 @@ function renderNextQuestion (){
     
     for(var i=0; i<currentQuestion.choices.length; i++){
         var buttonEl = document.createElement('button');
-        buttonEl.setAttribute('class', 'choice');
+        buttonEl.setAttribute('class','choice');
         buttonEl.textContent = currentQuestion.choices[i];
         contentEl.appendChild(buttonEl);
     }
 }
-
 
 //build an even listener that listen for a star buttom to be click
 startBtnEl.addEventListener('click', function(event){
@@ -71,10 +71,10 @@ startBtnEl.addEventListener('click', function(event){
      console.log('timer started');
 
      timeLeft--;
-     timeLeftEl.textContent=timeLeft;
+     timeLeftEl.textContent = timeLeft;
 
      if (timeLeft === 0){
-        //Todo: need a fuction that closes the quiz tell user whether the lost or won or score was 
+        //Todo: need a function that closes the quiz tell user whether the lost or won or score was 
         // build the rest of game over logic
         // page with result
         clearInterval (timer);
@@ -96,7 +96,7 @@ function endQuiz(){
    
     buttonEl.textContent='submit'
 
-    buttonEl.setAttribute('id','scorebutton')
+    buttonEl.setAttribute('id','scoreButton')
     contentEl.appendChild(inputEl)
     contentEl.appendChild(buttonEl)
 }
@@ -106,7 +106,7 @@ contentEl.addEventListener('click',function(event){
     var currentQuestion = questions[indexOfCurrentQuestion];
 
    
-//build an if statement for elemnet of the bottom that will match the condition
+//build an if statement for element of the bottom that will match the condition
 
 if ( event.target.matches('.choice')){
    // console.log(event.target.textContent)
@@ -115,31 +115,31 @@ if ( event.target.matches('.choice')){
     score++
     console.log('Your score is'+score);
      // increase the current score
-     //increase the index of currentquestion
-     // render next question
+
    }else{
-    console.log('hkjhkj');
+    timeLeft -= 10;
     //decrease timer 10 seconds
-    //increase the index of current question
-    //renderquestion();
+    
    }
+   //increase the index of current question
+    //renderquestion();
    indexOfCurrentQuestion++
     if (indexOfCurrentQuestion >= questions.length){
         clearInterval(timer);
-        console.log('quis end');
+        console.log('Quiz end');
         endQuiz();
 
     }
     else{
         renderNextQuestion();
     }
-   
-
 }
 
 
 });
 //create highScores array
+
+
 
 function saveScore(event){
     event.preventDefault()
@@ -147,13 +147,14 @@ function saveScore(event){
     console.log(initials)
 
     //put initals and score into an object
-
+    
     //.push object into highscores array
+    
 
     //localStorage.setItem("My high scores", highScores)
-
+    
     localStorage.setItem(initials, score)
 
     //display all highsscores in local storage
 }
-buttonEl.addEventListener('click',saveScore)
+buttonEl.addEventListener('click',saveScore);
