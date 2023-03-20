@@ -5,7 +5,7 @@
 .top-bar timer{
     float:right;
 
- }
+}
 .top-bar button{
     outline:none;
     background-color:white;
@@ -25,10 +25,15 @@
     justify-content: center;
     align-items: center;    
 }
+
+
 button{
+    border:none;
     outline: none;
     background-color:blueviolet;
     color: white;
+   
+    
 }
 
 #heading{

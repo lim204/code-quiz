@@ -1,16 +1,13 @@
-//  this grab the reference from html elements
+//  this grab the reference from html elements//
 var timeLeftEl = document.querySelector('#timeLeft');
-
-// can be question instead
 var headingEl = document.querySelector('#heading');
-//question body
 var contentEl = document.querySelector('#content');
 var startBtnEl = document.querySelector('#start');
 var timer;
 var score=0;
 
 
-// list of all questions, choices, and answers
+// list of all questions, choices, answers//
 var questions = [
     {
       title: 'Commonly used data types DO NOT include:',
@@ -49,7 +46,7 @@ var questions = [
 var timeLeft = 60;
 var indexOfCurrentQuestion = 0;
 
-function renderNextQuestion (){
+function renderNextQuestion(){
     contentEl.innerHTML = ' ';
     var currentQuestion = questions[indexOfCurrentQuestion];
     headingEl.textContent = currentQuestion.title;
@@ -62,7 +59,7 @@ function renderNextQuestion (){
     }
 }
 
-//build an even listener that listen for a star buttom to be click
+//build an even listener that listen for a star buttom to be click//
 startBtnEl.addEventListener('click', function(event){
     timeLeftEl.textContent='timeLeft';
     event.preventDefault();
@@ -77,8 +74,8 @@ startBtnEl.addEventListener('click', function(event){
         //Todo: need a function that closes the quiz tell user whether the lost or won or score was 
         // build the rest of game over logic
         // page with result
-        clearInterval (timer);
-        endQuiz ()
+        clearInterval(timer);
+        endQuiz();
      }
 
 
@@ -109,24 +106,18 @@ contentEl.addEventListener('click',function(event){
 //build an if statement for element of the bottom that will match the condition
 
 if ( event.target.matches('.choice')){
-   // console.log(event.target.textContent)
-   // console.log(currentQuestion.answer);
    if (event.target.textContent === currentQuestion.answer){
     score++
     console.log('Your score is'+score);
-     // increase the current score
-
    }else{
     timeLeft -=10;
-    //decrease timer 10 seconds
-    
    }
    //increase the index of current question
-    //renderquestion();
+    //renderNextQuestion();
    indexOfCurrentQuestion++
     if (indexOfCurrentQuestion >= questions.length){
         clearInterval(timer);
-        console.log('Quiz end');
+        //console.log('Quiz end');
         endQuiz();
 
     }
@@ -138,7 +129,7 @@ if ( event.target.matches('.choice')){
 });
 //create highScores array
 var highScores=[];
-var timeLeft=60;
+var timeLeft=30;
 var uiInputVal=" ";
 
 function saveScore(event){
